@@ -142,6 +142,33 @@
 
         .unchecked-text { color: #aaa; text-decoration: line-through; text-decoration-color: transparent; }
         .hidden { display: none !important; }
+    
+        /* --- ★★★ 手機版 RWD 修正區 (請貼在 style 標籤內的最後面) ★★★ --- */
+    @media (max-width: 768px) {
+        /* 1. 讓頁尾佈局從「左右」變「上下」 */
+        .footer-layout {
+            flex-direction: column; 
+        }
+
+        /* 2. 讓左右兩欄都變成 100% 寬度，並增加間距 */
+        .footer-left, 
+        .footer-right {
+            width: 100%;
+            margin-bottom: 40px; /* 讓印章跟簽名框分開，不要黏在一起 */
+        }
+
+        /* 3. 優化手機上的印章顯示位置 */
+        .stamps-container {
+            justify-content: center; /* 手機上讓印章居中比較好看，或者保留 flex-start 也可以 */
+            margin-bottom: 10px;
+        }
+
+        /* 4. 確保簽名板在手機上有足夠高度與寬度 */
+        .signature-wrapper {
+            width: 100%;
+            height: 200px; /* 手機手指簽名需要大一點的空間 */
+        }
+    }
     </style>
 </head>
 <body>
